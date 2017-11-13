@@ -1,0 +1,30 @@
+DB:连接数据库
+DAO：执行sql的
+service：业务层，调用DAO层
+VO: 值对象，通信，各层传递信息。
+
+DB:
+Connection conn;
+Connection getConnection(){}
+void closeConnection(){}
+dao:
+interface iUserDao{
+   boolean add(User user);
+   boolean del(User user);
+   boolean update(User user);
+   List<User> queryAll();
+   User queryUserById(int id);
+}
+UserDaoImp implement iUserDao{
+
+}
+vo:
+class User implements Serizlizable{}
+service:
+interface IUserService{}
+class UserServiceImp{}
+
+引前端模板 提交到check.jsp
+check.jsp:
+add(User user);
+List<User> list=queryAll();
